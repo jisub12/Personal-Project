@@ -25,8 +25,8 @@ let boss1Created = false; // 보스1 ture이면 보스 나타남, false면 안�
 let boss2Created = false; // 보스2
 let boss3Created = false; // 보스3
 let score = 0;
-let playerSpeed = 3; // 플레이어 기본 스피드 값
-let enemySpeed = 2; // 적 내려오는 스피드 값
+let playerSpeed = 2; // 플레이어 기본 스피드 값
+let enemySpeed = 1; // 적 내려오는 스피드 값
 let enemySpawnSpeed = 1000; // 적 생성 속도
 let isPaused = true; // 일시정지 기능
 
@@ -233,9 +233,9 @@ function createEnemyBoss1() {
     enemyList.push(boss);
     boss1Created = true;
     // 보스 1이 생성되면 스피드 업
-    playerSpeed = 4;
+    playerSpeed = 3;
     // 보스 1이 생성되면 적군 이동 속도를 빠르게 변경
-    enemySpeed = 3;
+    enemySpeed = 2;
     // 적 생성 속도
     enemySpawnSpeed = 100;
   }
@@ -248,9 +248,9 @@ function createEnemyBoss2() {
     enemyList.push(boss);
     boss2Created = true;
     // 보스 2가 생성되면 스피드 업
-    playerSpeed = 6;
+    playerSpeed = 5;
     // 보스 2이 생성되면 적군 이동 속도를 빠르게 변경
-    enemySpeed = 3.2;
+    enemySpeed = 2;
     enemySpawnSpeed = 100;
   }
 }
@@ -262,9 +262,9 @@ function createEnemyBoss3() {
     enemyList.push(boss);
     boss3Created = true;
     // 보스 3이 생성되면 스피드 업
-    playerSpeed = 9;
+    playerSpeed = 7;
     // 보스 3이 생성되면 적군 이동 속도를 빠르게 변경
-    enemySpeed = 3.4;
+    enemySpeed = 2;
     enemySpawnSpeed = 100;
   }
 }
@@ -530,11 +530,11 @@ function main() {
 
   }
 }
-document.querySelector(".h-nowUser").innerHTML = "현재 사용자 : " + getCurrentUser();
+document.querySelector(".h-nowUser").innerHTML = "현재 사용자 : " 
 let re = document.querySelector('.h-reward');
 let reward = 0;
-let gameUser = getCurrentUser();
-let gameUser1 = JSON.parse(localStorage.getItem("user_" + gameUser));
+// let gameUser = getCurrentUser();
+// let gameUser1 = JSON.parse(localStorage.getItem("user_" + gameUser));
 
 
 function userGetreward() {
@@ -608,5 +608,5 @@ function main() {
 
 loadImage();
 setupKeyboardListener();
-createEnemy();
+// createEnemy();
 main();
